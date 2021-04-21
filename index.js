@@ -105,6 +105,12 @@ const scroll = new SmoothScroll('nav a[href*="#"], .scrollToTop a[href*="#"]', {
   offset: 50
 });
 
+document.addEventListener("scrollStart", () => {
+  if(headerEl.classList.contains("open")){
+    headerEl.classList.remove("open");
+  }
+})
+
 const exploreBtnEls = document.querySelectorAll(".explore-btn");
 
 exploreBtnEls.forEach( elem => {
